@@ -19,18 +19,22 @@ namespace Consumer
 
             //Select using list range
             var elementByRange = redis.ListRange(listKey, 0, 1);
-            var deserializeObject = JsonConvert.DeserializeObject<MessageModel>(elementByRange.FirstOrDefault());
-            Console.WriteLine("List: FirstElement", deserializeObject);
+            //var deserializeObject = JsonConvert.DeserializeObject<MessageModel>(elementByRange.FirstOrDefault());
+            //Console.WriteLine("List: FirstElement", deserializeObject);
 
             //Select specific value
             var elementbyIndex = redis.ListGetByIndex(listKey, 2);
-            deserializeObject = JsonConvert.DeserializeObject<MessageModel>(elementbyIndex);
-            Console.WriteLine("List: FirstElement", deserializeObject);
+            //deserializeObject = JsonConvert.DeserializeObject<MessageModel>(elementbyIndex);
+            //Console.WriteLine("List: FirstElement", deserializeObject);
 
 
             //Left Pop
             var popElement = redis.ListLeftPop(listKey);
-            deserializeObject = JsonConvert.DeserializeObject<MessageModel>(popElement);
+            if (popElement.TryParse(out int val))
+            {
+                var messageResponse = DatabaseService.RetrieveMessageFromDatabase(val);
+            }
+            //deserializeObject = JsonConvert.DeserializeObject<MessageModel>(popElement);
 
             Console.WriteLine("List: After removal", string.Concat(redis.ListRange(listKey)));
 

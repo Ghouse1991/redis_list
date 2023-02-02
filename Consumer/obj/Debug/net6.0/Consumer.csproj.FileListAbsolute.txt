@@ -17,3 +17,4 @@ D:\poc\Consumer\obj\Debug\net6.0\ref\Consumer.dll
 D:\poc\Consumer\obj\Debug\net6.0\Consumer.pdb
 D:\poc\Consumer\obj\Debug\net6.0\Consumer.genruntimeconfig.cache
 D:\poc\Consumer\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\poc\Consumer\obj\Debug\net6.0\Consumer.csproj.AssemblyReference.cache
