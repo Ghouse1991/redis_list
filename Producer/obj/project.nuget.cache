@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "L5FVMnVMzmLIXOmcpaIGEssO557cAe4XK9jckCQGWTc42LTYefV/w9SbdkY3DYE3JSyBSyQeyRbeybx9DatNog==",
+  "dgSpecHash": "pkdBCuhJ6AGPL4nK9sfdZdBMcfkTVWNXLlecrBFkrEgZHiUnIvBo4raVlDe3ts+qVHFWak1vvRSO9CxoOnNFCA==",
   "success": true,
   "projectFilePath": "D:\\poc\\Producer\\Producer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.2\\pipelines.sockets.unofficial.2.2.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\stackexchange.redis\\2.6.90\\stackexchange.redis.2.6.90.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0\\system.configuration.configurationmanager.7.0.0.nupkg.sha512",

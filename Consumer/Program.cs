@@ -1,4 +1,5 @@
-﻿using StackExchange.Redis;
+﻿using Newtonsoft.Json;
+using StackExchange.Redis;
 
 namespace Consumer
 {
@@ -16,11 +17,20 @@ namespace Consumer
             var listKey = "listKey";
             Console.WriteLine("ListRange", string.Concat(redis.ListRange(listKey)));
 
-            var lastElement = redis.ListRange(listKey, 0, 1);
-            Console.WriteLine("List: FirstElement", string.Concat(lastElement));
+            //Select using list range
+            var elementByRange = redis.ListRange(listKey, 0, 1);
+            var deserializeObject = JsonConvert.DeserializeObject<MessageModel>(elementByRange.FirstOrDefault());
+            Console.WriteLine("List: FirstElement", deserializeObject);
 
-            //Pop data to redis list 
-            var firstElement = redis.ListLeftPop(listKey);
+            //Select specific value
+            var elementbyIndex = redis.ListGetByIndex(listKey, 2);
+            deserializeObject = JsonConvert.DeserializeObject<MessageModel>(elementbyIndex);
+            Console.WriteLine("List: FirstElement", deserializeObject);
+
+
+            //Left Pop
+            var popElement = redis.ListLeftPop(listKey);
+            deserializeObject = JsonConvert.DeserializeObject<MessageModel>(popElement);
 
             Console.WriteLine("List: After removal", string.Concat(redis.ListRange(listKey)));
 

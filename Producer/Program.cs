@@ -1,4 +1,5 @@
-﻿using StackExchange.Redis;
+﻿using Newtonsoft.Json;
+using StackExchange.Redis;
 
 namespace Producer
 {
@@ -17,8 +18,12 @@ namespace Producer
             redis.KeyDelete(listKey, CommandFlags.FireAndForget);
 
             //Push data to redis list 
-            redis.ListRightPush(listKey, "Element1");
-            redis.ListRightPush(listKey, "Element2");
+            redis.ListRightPush(listKey, new RedisValue(JsonConvert.SerializeObject(new MessageModel { Id = 1, Message = "Message1", PatientId = 1 })));
+            redis.ListRightPush(listKey, new RedisValue(JsonConvert.SerializeObject(new MessageModel { Id = 2, Message = "Message2", PatientId = 2 })));
+
+            //Push data to redis list 
+            //redis.ListRightPush(listKey, 1);
+            //redis.ListRightPush(listKey, 2);
 
             Console.ReadLine();
         }

@@ -27,3 +27,4 @@ D:\poc\Producer\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemE
 D:\poc\Producer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\poc\Producer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\poc\Producer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\poc\Producer\bin\Debug\net6.0\Newtonsoft.Json.dll
