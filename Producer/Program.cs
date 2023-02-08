@@ -22,8 +22,11 @@ namespace Producer
             //redis.ListRightPush(listKey, new RedisValue(JsonConvert.SerializeObject(new MessageModel { Id = 2, Message = "Message2", PatientId = 2 })));
 
             //Push data to redis list 
-            redis.ListRightPush(listKey, 1);
-            redis.ListRightPush(listKey, 2);
+            redis.ListRightPush(listKey, "abcdefghijklmnopqrstuvwxyz".Select(x => (RedisValue)x.ToString()).ToArray());
+            //redis.ListRightPush(listKey, 1);
+            //redis.ListRightPush(listKey, 2);
+            //redis.ListRightPush(listKey, 3);
+            //redis.ListRightPush(listKey, 4);
 
             Console.ReadLine();
         }

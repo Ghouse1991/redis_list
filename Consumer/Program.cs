@@ -29,7 +29,7 @@ namespace Consumer
 
 
             //Left Pop
-            var popElement = redis.ListLeftPop(listKey);
+            var popElement = redis.ListLeftPop(elementbyIndex);
             if (popElement.TryParse(out int val))
             {
                 var messageResponse = DatabaseService.RetrieveMessageFromDatabase(val);
